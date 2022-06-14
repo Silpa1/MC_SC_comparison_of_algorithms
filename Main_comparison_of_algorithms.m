@@ -1,7 +1,7 @@
 clc;
 clear all;close all;
 global n1 n2 n mk m  S2 q  kk;
-
+%filenames=  {'Pincat.mat','brain_T2_T1.mat','speech_seq.mat','Cardiac_ocmr_data.mat','lowres_speech.mat','FB_ungated.mat'};
 filenames={'brain_T2_T1.mat'};
 
 
