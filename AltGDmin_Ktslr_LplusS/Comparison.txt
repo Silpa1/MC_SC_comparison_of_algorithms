@@ -1,0 +1,2 @@
+Dataset(Radial) & Ktslr & LplusS &  AltGDMin &  AltGDMin MRI &  AltGDMin Sparse    
+lowres_speech(8) &   0.2663 (5182.13,  0.3706)&   0.2513 (364.73,  0.3559)&   0.2953 ( 7.13,  0.3317)&   0.1188 (82.57,  0.5887)&   0.1188 (83.30,  0.5882) 
