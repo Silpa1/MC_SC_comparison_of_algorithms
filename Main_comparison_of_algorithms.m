@@ -176,7 +176,7 @@ for jj = 1:1:numel(filenames)
             mssim=ssim(abs(Xhat_GD(:,:,i)/max(max(Xhat_GD(:,:,i)))),abs(X_image(:,:,i)/max(max(X_image(:,:,i)))));
             similarity_index(i)=mssim;
         end
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_GD.mat', 'Xhat_GD');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_GD.mat', 'Xhat_GD');
         sim_GD=min(similarity_index);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AltgdMin + Sparse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         T=70;
