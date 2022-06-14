@@ -68,7 +68,7 @@ for jj = 1:1:numel(filenames)
             similarity_index(i)=ssim(abs(Xhat_ktslr(:,:,i)/max(max(Xhat_ktslr(:,:,i)))),abs(X_image(:,:,i)/max(max(X_image(:,:,i)))));
         end
         sim_Ktslr=min(similarity_index)
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_ktslr.mat', 'Xhat_ktslr');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_ktslr.mat', 'Xhat_ktslr');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% L+S-Otazo %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         param.Samp_loc=Samp_loc;
@@ -112,7 +112,7 @@ for jj = 1:1:numel(filenames)
             similarity_index(i)=mssim;
         end
         sim_LpS=min(similarity_index)
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_LpS.mat', 'Xhat_LpS');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_LpS.mat', 'Xhat_LpS');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% L+S-Lin %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         tmp = max(X_image(:));
@@ -158,7 +158,7 @@ for jj = 1:1:numel(filenames)
             mssim=ssim(abs(LplusS(:,:,i)/max(max(LplusS(:,:,i)))),abs(Xtrue(:,:,i)/max(max(Xtrue(:,:,i)))));
             similarity_index(i)=mssim;
         end
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_LpS_lin.mat', 'LplusS');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_LpS_lin.mat', 'LplusS');
         sim_LplusS_jeff=min(similarity_index);
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%altGDmin%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -223,7 +223,7 @@ for jj = 1:1:numel(filenames)
         Xhat_MGDS1=L+S;
         Xhat_MGDS=reshape(Xhat_MGDS1,n1,n2,q);
         Time_GD_Sparse=  toc;
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_MGDS.mat', 'Xhat_MGDS');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_MGDS.mat', 'Xhat_MGDS');
         % Time_GD_Sparse= [Time_GD_Sparse, toc];
         Error_GD_Sparse=RMSE_modi(Xhat_MGDS,X_image);
         similarity_index=[];
@@ -232,7 +232,7 @@ for jj = 1:1:numel(filenames)
             similarity_index(i)=mssim;
         end
         sim_MGDS=min(similarity_index)
-        %   %filename(ii)=name;
+    
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AltgdMin + MEC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
@@ -259,8 +259,6 @@ for jj = 1:1:numel(filenames)
         Xhat_GD_MEC=reshape(Xhat_GD_MEC1,[n1, n2,q]);
         
         Time_GD_MEC=  toc;
-        %save('C:\Users\sbabu\Desktop\Mini-Batch\Mini_Batch_MEC_Sparse\golden_angle_and_radial_comparison\Xhat_GD_MEC.mat', 'Xhat_GD_MEC');
-        % Time_GD_Sparse= [Time_GD_Sparse, toc];
         Error_GD_MEC=RMSE_modi(Xhat_GD_MEC,X_image);
         similarity_index=[];
         for i =1:1:q
@@ -268,7 +266,7 @@ for jj = 1:1:numel(filenames)
             similarity_index(i)=mssim;
         end
         sim_GD_MEC=min(similarity_index)
-        save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_MGD_MEC.mat', 'Xhat_GD_MEC');
+        %save('C:\Users\sbabu\Desktop\Result\brain_8\Xhat_MGD_MEC.mat', 'Xhat_GD_MEC');
         fprintf(fid, '%s(%d) & %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f) & %8.4f (%5.2f) \n', name, radial(ii),Error_Ktslr,Time_Ktslr,Error_LSparse,Time_LSparse,Error_LplusS_jeff,Time_LplusS_jeff,Error_GD,Time_GD,Error_GD_MEC,Time_GD_MEC,Error_GD_Sparse,Time_GD_Sparse);
         fprintf(fid2, '%s(%d) & %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)& %8.4f (%5.2f)  \n', name, radial(ii),sim_Ktslr,Time_Ktslr,sim_LpS,Time_LSparse,sim_LplusS_jeff,Time_LplusS_jeff,sim_GD,Time_GD,sim_GD_MEC,Time_GD_MEC,sim_MGDS,Time_GD_Sparse);
  
