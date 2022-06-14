@@ -13,5 +13,6 @@ To generate Table III and Table V results:
 
 
 ===================================================================================
+
 The folder "Dataset" contains the MRI used in this paper (except long-speech sequence because of its larger size). 
 
