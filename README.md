@@ -9,7 +9,9 @@ To generate Table III and Table V results:
 
 1.  Run the mirt-main/setup.m: L+S-Lin code requires the Matlab version of the Michigan Image Reconstruction Toolbox (MIRT).
 
-2.  Run Main_comparison_of_algorithm.m: This run all the 5 algorithms and calculate NMSE (Normalized Mean Square Error), Time required and Similarity index and save these results in Comparison_error.txt [Error(Time)] amd Comparison_sim.txt [sim(Time)].
+2. Load the .mat files in the Dataset folder (Copy and paste the .mat files in the same folder contating the files).
+
+3.  Run Main_comparison_of_algorithm.m: This run all the 5 algorithms and calculate NMSE (Normalized Mean Square Error), Time required and Similarity index and save these results in Comparison_error.txt [Error(Time)] amd Comparison_sim.txt [sim(Time)].
 
 
 ===================================================================================
