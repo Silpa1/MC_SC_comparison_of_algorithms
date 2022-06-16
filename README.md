@@ -16,7 +16,7 @@ To generate Table III and Table V results:
 
 ===================================================================================
 
-The folder "Dataset" contains the MRI used in this paper (except long-speech sequence because of its larger size). 
+The folder "Dataset" contains the MRI used in this paper (except long-speech sequence because of its larger size). For long-speech sequence email sbabu@iastate.edu, namrata@iastate.edu.
 
 For questions contact sbabu@iastate.edu, namrata@iastate.edu
 
