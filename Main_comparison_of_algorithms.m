@@ -150,8 +150,8 @@ for jj = 1:1:numel(filenames)
         Y=Y(1:m,1:q);
         T=70;
         tic;
-        [Uhat]=initAltGDMin(Y);
-        [Uhat2, Bhat2]=AltGDmin(T,Uhat,Y);
+        [U0]=initAltGDMin(Y);
+        [Uhat2, Bhat2]=AltGDmin(T,U0,Y);
         X_hat=reshape(Uhat2*Bhat2,[n1, n2,q]);
         Time_GD=  toc;
         Error_GD=RMSE_modi(X_hat,X_image);
@@ -168,8 +168,8 @@ for jj = 1:1:numel(filenames)
         [zbar_hat,flag,resNE,iter] = cgls(@Afft,@Att, Y,0,1e-36,10);
         Ytemp=reshape(Afft(zbar_hat),[m,q]);
         Ybar=Y-Ytemp;
-        [Uhat]=initAltGDMin(Ybar);
-        [Uhat2, Bhat2]=AltGDmin(T,Uhat,Ybar);
+        [U0]=initAltGDMin(Ybar);
+        [Uhat2, Bhat2]=AltGDmin(T,U0,Ybar);
         X_hat=Uhat2*Bhat2;
        
         
@@ -224,8 +224,8 @@ for jj = 1:1:numel(filenames)
         [zbar_hat,flag,resNE,iter] = cgls(@Afft,@Att, Y,0,1e-36,10);
         Ytemp=reshape(Afft(zbar_hat),[m,q]);
         Ybar=Y-Ytemp;
-        [Uhat]=initAltGDMin(Ybar);
-        [Uhat2, Bhat2]=AltGDmin(T,Uhat,Ybar);
+        [U0]=initAltGDMin(Ybar);
+        [Uhat2, Bhat2]=AltGDmin(T,U0,Ybar);
         X_hat=Uhat2*Bhat2;
         
         Yhat_hat=Y-Afft(X_hat+zbar_hat);
