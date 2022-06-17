@@ -151,8 +151,8 @@ for jj = 1:1:numel(filenames)
         T=70;
         tic;
         [U0]=initAltGDMin(Y);
-        [Uhat2, Bhat2]=AltGDmin(T,U0,Y);
-        X_hat=reshape(Uhat2*Bhat2,[n1, n2,q]);
+        [Uhat, Bhat]=AltGDmin(T,U0,Y);
+        X_hat=reshape(Uhat*Bhat,[n1, n2,q]);
         Time_GD=  toc;
         Error_GD=RMSE_modi(X_hat,X_image);
         similarity_index=[];
@@ -169,8 +169,8 @@ for jj = 1:1:numel(filenames)
         Ytemp=reshape(Afft(zbar_hat),[m,q]);
         Ybar=Y-Ytemp;
         [U0]=initAltGDMin(Ybar);
-        [Uhat2, Bhat2]=AltGDmin(T,U0,Ybar);
-        X_hat=Uhat2*Bhat2;
+        [Uhat, Bhat]=AltGDmin(T,U0,Ybar);
+        X_hat=Uhat*Bhat;
        
         
         param.Samp_loc=Samp_loc;
@@ -225,8 +225,8 @@ for jj = 1:1:numel(filenames)
         Ytemp=reshape(Afft(zbar_hat),[m,q]);
         Ybar=Y-Ytemp;
         [U0]=initAltGDMin(Ybar);
-        [Uhat2, Bhat2]=AltGDmin(T,U0,Ybar);
-        X_hat=Uhat2*Bhat2;
+        [Uhat, Bhat]=AltGDmin(T,U0,Ybar);
+        X_hat=Uhat*Bhat;
         
         Yhat_hat=Y-Afft(X_hat+zbar_hat);
         Ehat=[];
