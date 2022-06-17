@@ -16,7 +16,7 @@ for jj = 1:1:numel(filenames)
     radial=[4,8,16];
     X_image=double(cell2mat(struct2cell(S)));
     
-    save('C:\Users\sbabu\Desktop\Results\low_res_8\X_input.mat', 'X_image');
+    
     [n1,n2,q]=size(X_image);
     n=n1*n2;
     X_mat=reshape(X_image,[n,q]);
