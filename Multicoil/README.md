@@ -21,6 +21,5 @@ For Datasets email sbabu@iastate.edu, namrata@iastate.edu.
 
 For questions contact sbabu@iastate.edu, namrata@iastate.edu
 
-If you are using our code please cite our paper: 'Fast Low Rank column-wise Compressive Sensing for Accelerated Dynamic MRI' authr's: Silpa Babu, Sajan Goud Lingala, Namrata Vaswani.
-
+If you are using our code please cite our paper: S. Babu, S. S. Nayer, S. G. Lingala and N. Vaswani, "Fast Low Rank Column-Wise Compressive Sensing For Accelerated Dynamic MRI," ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022, pp. 1346-1350, doi: 10.1109/ICASSP43922.2022.9747549.
 
