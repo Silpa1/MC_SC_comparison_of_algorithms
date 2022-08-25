@@ -6,8 +6,9 @@ Folder contains codes for TCI submission 2022.
 Comparison of ktslr, L+S-Otazo, L+S-Lin, altGDMin-MRI and altGDMin-MRI2.
 
 To generate Table III  results:
-
-1.  Run the mirt-main/setup.m: L+S-Lin code requires the Matlab version of the Michigan Image Reconstruction Toolbox (MIRT).
+1. This code requires the Matlab version of the Michigan Image Reconstruction Toolbox (MIRT) from [http://web.eecs.umich.edu/~fessler/code/index.html]
+Please set up MIRT before running the examples.
+Run the mirt-main/setup.m
 
 2. Load the Datasets (Due to the large size of multicoil dataset cannot be loaded in github. Datasets will be provided on request.) . Copy and paste the .mat files in the same folder contating the files).
 
@@ -22,4 +23,4 @@ For questions contact sbabu@iastate.edu, namrata@iastate.edu
 
 If you are using our code please cite our paper: 'Fast Low Rank column-wise Compressive Sensing for Accelerated Dynamic MRI' authr's: Silpa Babu, Sajan Goud Lingala, Namrata Vaswani.
 
-This code is written by Silpa Babu (the code structure is followed from Seyedehsara (Sara) Nayer).
+
