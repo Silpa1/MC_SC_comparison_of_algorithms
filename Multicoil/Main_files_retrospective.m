@@ -8,6 +8,7 @@ fprintf(fid, '%s(%s) & %s & %s &  %s & %s & %s   \n','Dataset','Radial','ktslr',
 % ny nc
 %Xtrue is the true image of size nx x ny x nt   ; b1c: coil sensitivity of size nx x ny x nc 
 % kdata_u: simulated pseudo-radially undersampled kspace data of size nx x ny x nt x nc  with zeros where no samples was taken.
+% For datasets fs_0016_3T_ksp_csm, fs_0019_3T_ksp_csm, multi_coil_lowres_speech, multicoil_ungated_cmr_perf to regenerate table III contact authors
 load('brain_fullsampled_kspace.mat')
 [nx,ny,nt]=size(Xtrue);
 [~,~,nc]=size(b1c);
