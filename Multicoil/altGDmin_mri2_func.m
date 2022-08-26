@@ -13,7 +13,6 @@ yinter=y-ybar_hat;
 X=altGDmin_basic(yinter);
 
 %%%%%%%%%% Calculating Sparse component %%%%%%%%%%%%
-%%%%%%%%%% Calculating Sparse component %%%%%%%%%%%%
 param.d = y-E_forw(X+zbar_hat);
 param.T=getT(nx,ny,nt);
 param.nite=10;
