@@ -13,28 +13,25 @@ yinter=y-ybar_hat;
 X=altGDmin_basic(yinter);
 
 %%%%%%%%%% Calculating Sparse component %%%%%%%%%%%%
-param.d = y;
+%%%%%%%%%% Calculating Sparse component %%%%%%%%%%%%
+param.d = y-E_forw(X+zbar_hat);
 param.T=getT(nx,ny,nt);
-param.lambda_L=0.01;
 param.nite=10;
 param.tol=0.0025;
 M=E_back(param.d);
-Lpre=M;
 Ehat=zeros(nx,ny,nt);
-L=X+zbar_hat;
-param.lambda_S=0.001*max(max(abs(M-L)));
+param.lambda_S=0.001*max(max(abs(M)));
 ite=0;
 while(1)
     ite=ite+1;
     M0=M;
-    Ehat=param.T'*(SoftThresh(param.T*reshape(M-Lpre,[nx,ny,nt]),param.lambda_S));
-    resk=E_forw(reshape(L+Ehat,[nx,ny,nt]))-param.d;
-    M=L+Ehat-reshape(E_back(resk),[nx,ny,nt]);
-    Lpre=L;
-    tmp2=param.T*reshape(Ehat,[nx,ny,nt]);
+    Ehat=param.T'*(SoftThresh(param.T*reshape(M,[nx,ny,nt]),param.lambda_S));
+    resk=E_forw(reshape(Ehat,[nx,ny,nt]))-param.d;
+    M=Ehat-reshape(E_back(resk),[nx,ny,nt]);
+%     tmp2=param.T*reshape(Ehat,[nx,ny,nt]);
     if (ite > param.nite) || (norm(M(:)-M0(:))<param.tol*norm(M0(:))), break;end
 end
-Xhat_mri2=L+Ehat;
+Xhat_mri2=X+zbar_hat+Ehat;
 Time_mri2=toc;
 end
 
