@@ -23,12 +23,12 @@ param.lambda_S=0.001*max(max(abs(M)));
 ite=0;
 while(1)
     ite=ite+1;
-    M0=M;
+    M0=M+X+zbar_hat;
     Ehat=param.T'*(SoftThresh(param.T*reshape(M,[nx,ny,nt]),param.lambda_S));
     resk=E_forw(reshape(Ehat,[nx,ny,nt]))-param.d;
     M=Ehat-reshape(E_back(resk),[nx,ny,nt]);
-%     tmp2=param.T*reshape(Ehat,[nx,ny,nt]);
-    if (ite > param.nite) || (norm(M(:)-M0(:))<param.tol*norm(M0(:))), break;end
+    M2=M+X+zbar_hat;
+    if (ite > param.nite) || (norm(M2(:)-M0(:))<param.tol*norm(M0(:))), break;end
 end
 Xhat_mri2=X+zbar_hat+Ehat;
 Time_mri2=toc;
